@@ -1,131 +1,112 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Operational Amplifiers - Soraya Ghomdim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operational Amplifiers in Analog Electronics</title>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="style.css">
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body><h1>Operational Amplifiers (Op-Amps): The Silent Powerhouses of Analog Electronics</h1>
-<p><strong>By Ghomdim Fohom Soraya</strong></p>
-<p><em>Aspiring engineer | Developer of “The Resonance Within” and "How much work can we squeeze from heat" </em></p>
-<h2>Introduction</h2>
-<p>Operational amplifiers (Op-Amps) are the unsung heroes of modern analog electronics. From audio amplifiers to mathematical computing circuits, their versatility and precision have earned them a foundational place in engineering.</p>
-<p>An Op-Amp is not merely a component—it’s a core building block that simplifies complex systems, enabling engineers and researchers to model, manipulate, and understand the physical world.</p>
-<h2>1. What Is an Operational Amplifier?</h2>
-<p>An Operational Amplifier is a high-gain voltage amplifier with differential inputs and a single-ended output.</p>
-<ul>
-  <li>Inputs: Non-inverting (+), Inverting (−)</li>
-  <li>Output: Amplified signal</li>
-  <li>Power Supply: Often dual polarity ±V</li>
-</ul>
-<p>Ideal Op-Amp Assumptions:</p>
-<ul>
-  <li>Infinite open-loop gain</li>
-  <li>Infinite input impedance</li>
-  <li>Zero output impedance</li>
-  <li>Infinite bandwidth</li>
-  <li>Zero offset voltage</li>
-</ul>
-<p>[Insert IMAGE: Ideal Op-Amp symbol]</p><h2>2. The Golden Rules of Op-Amps (Ideal Cases)</h2>
-<ol>
-  <li>V_+ = V_- (in a negative feedback loop)</li>
-  <li>I_{in} = 0 (no current flows into input terminals)</li>
-</ol>
-<h2>3. Core Configurations and Formulas</h2>
-<p><strong>What is R_f?</strong> R_f is the feedback resistor used in Op-Amp circuits. It connects the output to the inverting input and plays a key role in determining the gain and behavior of the amplifier. It allows part of the output signal to be returned (fed back) to the input for control and stability.</p>
-<ul>
-  <li>Inverting Amplifier: A_v = -\frac{R_f}{R_{in}}</li>
-  <li>Non-Inverting Amplifier: A_v = 1 + \frac{R_f}{R_1}</li>
-  <li>Voltage Follower: A_v = 1</li>
-  <li>Summing Amplifier: V_{out} = -R_f \left(\frac{V_1}{R_1} + \frac{V_2}{R_2} + \dots \right)</li>
-  <li>Integrator: V_{out}(t) = -\frac{1}{RC} \int V_{in}(t)\,dt</li>
-  <li>Differentiator: V_{out}(t) = -RC \frac{dV_{in}(t)}{dt}</li>
-</ul>
-<p>[Insert CIRCUIT DIAGRAMS and SIMULATIONS]</p>
-<h2>4. Active Filters with Op-Amps</h2>
-<p><strong>What is s?</strong> In filter design and control theory, s is a complex frequency variable defined in Laplace transforms. It's typically written as s = \sigma + j\omega, where:</p>
-<ul>
-  <li>\sigma is the exponential decay/growth rate</li>
-  <li>\omega is the angular frequency (2\pi f)</li>
-</ul>
-<p>In steady-state sinusoidal analysis, we use s = j\omega. The variable s allows analysis of filters and systems in the frequency domain.</p>
-<h3>Why Active Filters?</h3>
-<ul>
-  <li>Amplify and filter simultaneously</li>
-  <li>Require no inductors (compact design)</li>
-  <li>Offer higher input impedance</li>
-</ul><h3>Types of Active Filters</h3>
-<ul>
-  <li>Low-pass filter: H(s) = \frac{1}{1 + sRC}</li>
-  <li>High-pass filter: H(s) = \frac{sRC}{1 + sRC}</li>
-  <li>Band-pass filter: Combination of high-pass and low-pass</li>
-  <li>Notch filter: Rejects a narrow frequency band</li>
-</ul>
-<p>[Insert IMAGE: Frequency response plots]</p>
-<p>[Insert SIMULATION: Active filter using Op-Amp]</p>
-<h2>5. Real-World Applications</h2>
-<ul>
-  <li>Audio Amplifiers</li>
-  <li>Sensor Signal Conditioning</li>
-  <li>Active Filters</li>
-  <li>Oscillators and Wave Generators</li>
-  <li>Analog Computing</li>
-</ul>
-<p>[Insert IMAGE: Application block diagrams]</p>
-<p>[Insert VIDEO: Op-Amp in real-life systems]</p>
-<h2>6. Op-Amps and Transistors</h2>
-<p>Op-Amps are internally made from transistors arranged in differential pairs, current mirrors, and output stages. Studying these internal structures helps understand stability and performance at a deeper level.</p>
-<p>[Insert IMAGE: Transistor-level internal structure]</p>
-<p>[Insert VIDEO: Transistor-Level Architecture]</p>
-<h2>7. Simulating Op-Amps</h2>
-<ul>
-  <li>LTspice</li>
-  <li>Falstad</li>
-  <li>Multisim</li>
-</ul>
-<p>Explore my hosted simulation: <a href="https://the-resonance-within.onrender.com">The Resonance Within</a></p>
-<h2>8. Conclusion: From Theory to Identity</h2>
-<p>Mastering Op-Amps has been more than a technical journey—it’s been a revelation of how deeply mathematics, physics, and engineering intertwine. Designing filters taught me about boundaries—how to let the right signals in and block the noise.</p>
-<p>I now see myself not just as a student, but as someone capable of translating math into impact. Like an Op-Amp, I aim to amplify small opportunities into lasting change, especially in energy, communication, and education systems.</p>
-<h2>FAQ</h2>
-<details>
-  <summary>What is the difference between an ideal and real Op-Amp?</summary>
-  <p>An ideal Op-Amp has infinite gain, bandwidth, and input impedance with zero output impedance. Real Op-Amps approximate these values but are limited by practical design and materials.</p>
-</details>
-<details>
-  <summary>Why is feedback important in Op-Amps?</summary>
-  <p>Feedback controls the gain, improves stability, and linearizes the operation of the Op-Amp. Negative feedback is most common in linear applications.</p>
-</details>
-<details>
-  <summary>Can Op-Amps be used for digital circuits?</summary>
-  <p>Op-Amps are primarily used in analog circuits, but they can support mixed-signal designs and be part of comparators or ADC systems that interface with digital logic.</p>
-</details>
-<details>
-  <summary>What are the main limitations of Op-Amps?</summary>
-  <p>Real Op-Amps have limitations like finite slew rate, offset voltage, input bias currents, and frequency-dependent gain roll-off.</p>
-</details>
-<details>
-  <summary>What does \( R_f \) physically represent in a circuit?</summary>
-  <p>\( R_f \) is the resistor that feeds back part of the output to the inverting input. It controls gain and stability in amplifying circuits.</p>
-</details>
-<details>
-  <summary>What is the role of \( s \) in active filters?</summary>
-  <p>\( s \) represents complex frequency in Laplace transforms, allowing engineers to analyze how circuits behave over a range of frequencies in the s-domain.</p>
-</details>
-<details>
-  <summary>Can I build an Op-Amp with discrete transistors?</summary>
-  <p>Yes, it's possible, but very inefficient. Commercial Op-Amps are optimized ICs with better thermal stability, matching, and compactness than discrete designs.</p>
-</details>
-<details>
-  <summary>How do I choose the right Op-Amp for a project?</summary>
-  <p>Consider parameters like gain bandwidth product, input offset voltage, slew rate, power supply range, and noise figure depending on the application.</p>
-</details> 
-<h2>Appendices</h2>
-<ul>
-  <li>Derivations of each amplifier configuration</li>
-  <li>Op-Amp IC comparison table</li>
-  <li>Filter design guide</li>
-</ul>
-</body>
+<body>
+  <h1>Operational Amplifiers (Op-Amps): The Silent Powerhouses of Analog Electronics</h1>  <div>
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#what-is-an-opamp">What Is an Op-Amp?</a></li>
+      <li><a href="#golden-rules">Golden Rules of Op-Amps</a></li>
+      <li><a href="#core-circuits">Core Op-Amp Circuits</a></li>
+      <li><a href="#active-filters">Active Filters with Op-Amps</a></li>
+      <li><a href="#applications">Real-World Applications</a></li>
+      <li><a href="#transistors">Op-Amps and Transistors</a></li>
+      <li><a href="#tools">Simulation Tools</a></li>
+      <li><a href="#conclusion">Conclusion: From Circuits to Self</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+    </ol>
+  </div> 
+  <h2 id="introduction">Introduction</h2>
+  <p>Operational amplifiers (Op-Amps) are the unsung heroes of modern analog electronics. They perform a wide range of tasks such as signal amplification, mathematical operations, and waveform shaping. Found in devices from audio systems to biomedical instruments, Op-Amps are integral to designing smart, sensitive, and stable analog systems. This article walks through their working principles, practical applications, and the beauty of their mathematical foundations.</p>  
+  <h2 id="what-is-an-opamp">What Is an Op-Amp?</h2>
+  <p>An Operational Amplifier is a high-gain voltage amplifier with differential input and single-ended output. Originally designed for analog computation, modern Op-Amps now serve in nearly all signal-processing applications.</p>
+  <p>Ideal characteristics include:</p>
+  <ul>
+    <li>Infinite input impedance (no current enters input terminals)</li>
+    <li>Zero output impedance (perfect voltage source)</li>
+    <li>Infinite open-loop gain</li>
+    <li>Infinite bandwidth</li>
+  </ul>  
+  <h2 id="golden-rules">Golden Rules of Op-Amps</h2>
+  <p>To simplify analysis, two assumptions are commonly used in negative feedback configurations:</p>
+  <ol>
+    <li>No current flows into the input terminals</li>
+    <li>The voltage difference between inputs is zero: V_+ = V_-</li>
+  </ol> 
+  <h2 id="core-circuits">Core Op-Amp Circuits</h2>
+  <p>Op-Amps can be configured to serve various circuit functions:</p>
+  <table>
+    <tr><th>Configuration</th><th>Use</th></tr>
+    <tr><td>Inverting Amplifier</td><td>Amplifies input with 180° phase shift</td></tr>
+    <tr><td>Non-Inverting Amplifier</td><td>Amplifies input without phase inversion</td></tr>
+    <tr><td>Voltage Follower</td><td>Buffers input voltage without gain</td></tr>
+    <tr><td>Summing Amplifier</td><td>Adds multiple input signals</td></tr>
+    <tr><td>Integrator</td><td>Performs analog integration over time</td></tr>
+    <tr><td>Differentiator</td><td>Highlights rapid signal changes</td></tr>
+  </table> 
+  <h2 id="active-filters">Active Filters with Op-Amps</h2>
+  <p>Active filters use Op-Amps to process specific frequency components of a signal with precision and flexibility.</p>
+  <p>Types of active filters include:</p>
+  <ul>
+    <li>Low-Pass Filter – Allows frequencies below a cutoff to pass</li>
+    <li>High-Pass Filter – Allows frequencies above a cutoff to pass</li>
+    <li>Band-Pass Filter – Allows a specific range to pass</li>
+    <li>Notch Filter – Blocks a narrow band of frequencies</li>
+  </ul>
+  <p>Example low-pass filter transfer function:</p>
+  <p>H(s) = \frac{1}{1 + sRC}</p>
+  <p>Cutoff frequency:</p>
+  <p>f_c = \frac{1}{2\pi RC}</p>
+  <h2 id="applications">Real-World Applications</h2>
+  <p>Op-Amps are present in many fields, including:</p>
+  <ul>
+    <li>Sensor signal amplification (e.g., thermocouples, strain gauges)</li>
+    <li>Analog computation (integrators, differentiators)</li>
+    <li>Medical devices (ECG amplifiers)</li>
+    <li>Audio systems (equalizers, preamps)</li>
+    <li>Oscillators and waveform generators</li>
+  </ul>  <h2 id="transistors">Op-Amps and Transistors</h2>
+  <p>Internally, Op-Amps are built from fundamental transistor stages. Understanding these transistor-level operations (like differential pairs and current mirrors) helps engineers appreciate how high-level analog performance arises from low-level semiconductor behavior.</p> 
+  <h2 id="tools">Simulation Tools</h2>
+  <p>Engineers and students can simulate Op-Amp circuits using:</p>
+  <ul>
+    <li>LTspice – Professional and free</li>
+    <li>Falstad – Intuitive, browser-based</li>
+    <li>Proteus – Useful for embedded integration</li>
+    <li>Multisim – Educational and advanced simulation</li>
+  </ul> 
+  <h2 id="conclusion">Conclusion: From Circuits to Self</h2>
+  <p>Studying Op-Amps goes far beyond electronics. Building filters taught lessons about boundaries—what to allow and what to block. Simulating amplifiers showed how small signals can be meaningfully magnified. The design process encourages a mindset of feedback, adjustment, and precision—skills essential in both engineering and everyday problem solving.</p> 
+  <h2 id="faqs">FAQs</h2>
+  <details><summary>What is an Op-Amp?</summary>
+    <p>An Op-Amp is a differential amplifier that amplifies the voltage difference between its two input terminals.</p>
+  </details>
+  <details><summary>What is negative feedback?</summary>
+    <p>Negative feedback reduces the input-output difference, stabilizing the system and making it linear and predictable.</p>
+  </details>
+  <details><summary>Why are Op-Amps used in active filters?</summary>
+    <p>They allow gain control and eliminate the need for bulky inductors, making filters compact and efficient.</p>
+  </details>
+  <details><summary>What does a voltage follower do?</summary>
+    <p>It outputs the same voltage as the input, used to isolate stages without affecting impedance.</p>
+  </details>
+  <details><summary>Can I use Op-Amps with digital systems?</summary>
+    <p>Yes, Op-Amps are often used to condition analog signals before analog-to-digital conversion.</p>
+  </details>
+  <details><summary>How do I simulate an Op-Amp?</summary>
+    <p>Use tools like LTspice or Falstad to build virtual circuits and visualize responses.</p>
+  </details>
+  <details><summary>What limits real Op-Amp performance?</summary>
+    <p>Bandwidth, slew rate, offset voltage, input bias current, and power supply limits are typical constraints.</p>
+  </details>
+  <details><summary>Where can I explore real-time simulations?</summary>
+    <p>Visit <a href="https://the-resonance-within.onrender.com" target="_blank">this project site</a> to view simulations and circuit behavior interactively.</p>
+  </details></body>
 </html>
