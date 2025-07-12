@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-/* === Body and Typography === */
+/* === Typography and Layout === */
 body {
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
   font-size: 16px;
@@ -17,7 +17,6 @@ body {
   margin: auto;
 }
 
-/* === Headings === */
 h1, h2, h3 {
   color: #003366;
   margin-bottom: 1rem;
@@ -36,6 +35,24 @@ h2 {
 h3 {
   font-size: 1.2rem;
   margin-top: 1.5rem;
+}
+
+p, ul, ol {
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+/* === Links === */
+a {
+  color: #0059b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* === Tables === */
@@ -58,26 +75,7 @@ th {
   font-weight: bold;
 }
 
-/* === Paragraphs and Lists === */
-p, ul, ol {
-  margin-bottom: 1rem;
-}
-
-ul, ol {
-  padding-left: 1.5rem;
-}
-
-/* === Links === */
-a {
-  color: #0059b3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* === Details FAQ === */
+/* === FAQ Collapsibles === */
 details {
   background-color: #f2f9ff;
   border: 1px solid #cce0f5;
@@ -99,7 +97,7 @@ summary {
   margin-bottom: 0.5rem;
 }
 
-/* === MathJax Styling === */
+/* === MathJax === */
 mjx-container {
   font-size: 1.1em !important;
   line-height: 1.6;
@@ -112,6 +110,42 @@ mjx-container[display="true"] {
   text-align: center;
 }
 
+/* === Media Elements === */
+img,
+video,
+iframe,
+.simulation-box {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+/* === Caption Styling === */
+figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+figure figcaption {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* === Simulation Container === */
+.simulation-box {
+  background: #eef7ff;
+  padding: 1rem;
+  border: 1px solid #b3d4fc;
+  text-align: center;
+  font-family: monospace;
+}
+
 /* === Responsive Layout === */
 @media screen and (max-width: 768px) {
   body {
@@ -120,5 +154,9 @@ mjx-container[display="true"] {
 
   table, thead, tbody, th, td, tr {
     font-size: 14px;
+  }
+
+  figure figcaption {
+    font-size: 0.85rem;
   }
 }
