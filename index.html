@@ -8,7 +8,6 @@
   <script type="text/javascript" async id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="style.css" />
-  </script>
 </head>
 <body>
   <div class="container">
@@ -40,7 +39,7 @@
 
     <h2 id="what-is">What is an Operational Amplifier?</h2>
     <p>An operational amplifier is a high-gain device with differential inputs. Its basic action without feedback is:</p>
-    <p>\\[ V_{\text{out}} = A (V_+ - V_-) \\]</p>
+    <p>\[ V_{\text{out}} = A (V_+ - V_-) \]</p>
     <ul>
       <li><strong>V<sub>+</sub></strong>: non-inverting input</li>
       <li><strong>V<sub>-</sub></strong>: inverting input</li>
@@ -82,25 +81,25 @@
 
     <h2 id="configs">Common Configurations</h2>
     <h3>Inverting Amplifier</h3>
-    <p><strong>Formula:</strong> \\[V_{out} = -\frac{R_f}{R_{in}} V_{in}\\]</p>
+    <p><strong>Formula:</strong> \[V_{out} = -\frac{R_f}{R_{in}} V_{in}\]</p>
     <p>This circuit inverts and scales the input. It’s used in summing junctions, audio mixers, and precise analog subtraction.</p>
     <div class="image-slot">[Insert inverting amplifier circuit]</div>
     <div class="simulation-slot">[Insert interactive sim]</div>
 
     <h3>Non‑Inverting Amplifier</h3>
-    <p><strong>Formula:</strong> \\[V_{out} = \left(1 + \frac{R_f}{R_1}\right) V_{in}\\]</p>
+    <p><strong>Formula:</strong> \[V_{out} = \left(1 + \frac{R_f}{R_1}\right) V_{in}\]</p>
     <p>Produces gain without phase inversion. Ideal for buffering sensors and voltage reference outputs.</p>
     <div class="image-slot">[Insert non-inverting amplifier circuit]</div>
     <div class="simulation-slot">[Insert interactive sim]</div>
 
     <h3>Integrator</h3>
-    <p><strong>Formula:</strong> \\[V_{out} = -\frac{1}{RC}\int V_{in}\,dt\\]</p>
+    <p><strong>Formula:</strong> \[V_{out} = -\frac{1}{RC}\int V_{in}\,dt\]</p>
     <p>Transforms step inputs into ramps. Widely used in analog calculus operations and waveform shaping.</p>
     <div class="image-slot">[Insert integrator circuit]</div>
     <div class="simulation-slot">[Insert interactive sim]</div>
 
     <h3>Differentiator</h3>
-    <p><strong>Formula:</strong> \\[V_{out} = -RC\frac{dV_{in}}{dt}\\]</p>
+    <p><strong>Formula:</strong> \[V_{out} = -RC\frac{dV_{in}}{dt}\]</p>
     <p>Emphasizes rapid changes in input. Useful in edge detection but sensitive to noise.</p>
     <div class="image-slot">[Insert differentiator circuit]</div>
     <div class="simulation-slot">[Insert interactive sim]</div>
@@ -108,13 +107,13 @@
      <div class="section">
     <h2>Low-Pass Filter (LPF)</h2>
     <p><strong>Cutoff Frequency:</strong></p>
-    <p>\\( f_c = \\frac{1}{2\\pi RC} \\)</p>
+    <p>\( f_c = \frac{1}{2\pi RC} \)</p>
 
     <p><strong>Transfer Function (1st-order):</strong></p>
-    <p>\\( H(s) = \\frac{1}{1 + sRC} \\)</p>
+    <p>\( H(s) = \frac{1}{1 + sRC} \)</p>
 
     <p><strong>Second-order form (with Q):</strong></p>
-    <p>\\( H(s) = \\frac{\\omega_0^2}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+    <p>\( H(s) = \frac{\omega_0^2}{s^2 + \frac{\omega_0}{Q}s + \omega_0^2} \)</p>
 
     <p><strong>Important Notes:</strong> LPFs pass low frequencies and attenuate high ones. Q determines how sharp the roll-off is in second-order designs.</p>
 
@@ -125,13 +124,13 @@
   <div class="section">
     <h2>High-Pass Filter (HPF)</h2>
     <p><strong>Cutoff Frequency:</strong></p>
-    <p>\\( f_c = \\frac{1}{2\\pi RC} \\)</p>
+    <p>\( f_c = \frac{1}{2\pi RC} \)</p>
 
     <p><strong>Transfer Function (1st-order):</strong></p>
-    <p>\\( H(s) = \\frac{sRC}{1 + sRC} \\)</p>
+    <p>\( H(s) = \frac{sRC}{1 + sRC} \)</p>
 
     <p><strong>Second-order form (with Q):</strong></p>
-    <p>\\( H(s) = \\frac{s^2}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+    <p>\( H(s) = \frac{s^2}{s^2 + \frac{\\omega_0}{Q}s + \omega_0^2} \)</p>
 
     <p><strong>Important Notes:</strong> HPFs block low frequencies, allow high. High Q gives a sharp transition but may cause overshoot.</p>
 
@@ -142,13 +141,13 @@
   <div class="section">
     <h2>Band-Pass Filter (BPF)</h2>
     <p><strong>Center Frequency:</strong></p>
-    <p>\\( f_0 = \\frac{1}{2\\pi \\sqrt{R_1 R_2 C_1 C_2}} \\)</p>
+    <p>\( f_0 = \frac{1}{2\pi \sqrt{R_1 R_2 C_1 C_2}} \)</p>
 
     <p><strong>Transfer Function:</strong></p>
-    <p>\\( H(s) = \\frac{\\frac{\\omega_0}{Q}s}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+    <p>\( H(s) = \frac{\frac{\omega_0}{Q}s}{s^2 + \frac{\omega_0}{Q}s + \omega_0^2} \)</p>
 
     <p><strong>Q Factor:</strong></p>
-    <p>\\( Q = \\frac{f_0}{f_2 - f_1} \\)</p>
+    <p>\( Q = \frac{f_0}{f_2 - f_1} \)</p>
 
     <p><strong>Important Notes:</strong> The Q factor determines the sharpness of the passband. High Q = narrow band. Useful in RF, bio-signal processing.</p>
 
@@ -160,13 +159,13 @@
   <div class="section">
     <h2>Band-Stop Filter (Notch / BSF)</h2>
     <p><strong>Center Frequency:</strong></p>
-    <p>\\( f_0 = \\frac{1}{2\\pi \\sqrt{R_1 R_2 C_1 C_2}} \\)</p>
+    <p>\( f_0 = \frac{1}{2\\pi \sqrt{R_1 R_2 C_1 C_2}} \)</p>
 
     <p><strong>Transfer Function:</strong></p>
-    <p>\\( H(s) = \\frac{s^2 + \\omega_0^2}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+    <p>\( H(s) = \frac{s^2 + \omega_0^2}{s^2 + \frac{\omega_0}{Q}s + \omega_0^2} \)</p>
 
     <p><strong>Q Factor:</strong></p>
-    <p>\\( Q = \\frac{f_0}{f_2 - f_1} \\)</p>
+    <p>\( Q = \frac{f_0}{f_2 - f_1} \)</p>
 
     <p><strong>Important Notes:</strong> Deep, narrow notch = high Q. Used to eliminate hums or specific frequencies. Inverse of BPF.</p>
 
