@@ -104,25 +104,106 @@
     <div class="image-slot">[Insert differentiator circuit]</div>
     <div class="simulation-slot">[Insert interactive sim]</div>
     <h2 id="filters">Active Filters Using Op‑Amps</h2>
-    <h3>Low‑Pass Filter</h3>
-    <p><strong>Formula:</strong> \\[f_c = \frac{1}{2\pi RC}\\]</p>
-    <p>This circuit allows low frequencies to pass while attenuating higher frequencies. It’s an essential building block in audio engineering, sensor signal conditioning, and anti-aliasing filters.</p>
-    <div class="image-slot">[Insert low-pass filter circuit diagram]</div>
-    <div class="simulation-slot">[Insert LPF interactive sim]</div>
+     <div class="section">
+    <h2>🔻 Low-Pass Filter (LPF)</h2>
+    <p><strong>Cutoff Frequency:</strong></p>
+    <p>\\( f_c = \\frac{1}{2\\pi RC} \\)</p>
 
-    <h3>High‑Pass Filter</h3>
-    <p><strong>Formula:</strong> \\[f_c = \frac{1}{2\pi RC}\\]</p>
-    <p>The complement to low-pass, this circuit blocks low frequencies and passes higher ones. Used in tone controls, DC offset removal, and motion sensor circuits.</p>
-    <div class="image-slot">[Insert high-pass filter circuit diagram]</div>
-    <div class="simulation-slot">[Insert HPF interactive sim]</div>
+    <p><strong>Transfer Function (1st-order):</strong></p>
+    <p>\\( H(s) = \\frac{1}{1 + sRC} \\)</p>
 
-    <h3>Band‑Pass Filter</h3>
-    <p><strong>Formula:</strong> \\[f_0 = \frac{1}{2\pi\sqrt{R_1 R_2 C_1 C_2}}\\]</p>
-    <p>Combines both high- and low-pass behaviors to isolate a frequency band. Common in RF front-ends, hearing aids, and vibro-acoustic sensors.</p>
-    <div class="image-slot">[Insert band-pass filter circuit diagram]</div>
-    <div class="simulation-slot">[Insert BPF interactive sim]</div>
-    <div class="image-slot">[Insert Bode plot showing passband]</div>
+    <p><strong>Second-order form (with Q):</strong></p>
+    <p>\\( H(s) = \\frac{\\omega_0^2}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
 
+    <p><strong>Important Notes:</strong> LPFs pass low frequencies and attenuate high ones. Q determines how sharp the roll-off is in second-order designs.</p>
+
+    <div class="placeholder">[Insert LPF Image]</div>
+    <div class="placeholder">[Insert LPF Simulation]</div>
+  </div>
+
+  <div class="section">
+    <h2>🔺 High-Pass Filter (HPF)</h2>
+    <p><strong>Cutoff Frequency:</strong></p>
+    <p>\\( f_c = \\frac{1}{2\\pi RC} \\)</p>
+
+    <p><strong>Transfer Function (1st-order):</strong></p>
+    <p>\\( H(s) = \\frac{sRC}{1 + sRC} \\)</p>
+
+    <p><strong>Second-order form (with Q):</strong></p>
+    <p>\\( H(s) = \\frac{s^2}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+
+    <p><strong>Important Notes:</strong> HPFs block low frequencies, allow high. High Q gives a sharp transition but may cause overshoot.</p>
+
+    <div class="placeholder">[Insert HPF Image]</div>
+    <div class="placeholder">[Insert HPF Simulation]</div>
+  </div>
+
+  <div class="section">
+    <h2>🔊 Band-Pass Filter (BPF)</h2>
+    <p><strong>Center Frequency:</strong></p>
+    <p>\\( f_0 = \\frac{1}{2\\pi \\sqrt{R_1 R_2 C_1 C_2}} \\)</p>
+
+    <p><strong>Transfer Function:</strong></p>
+    <p>\\( H(s) = \\frac{\\frac{\\omega_0}{Q}s}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+
+    <p><strong>Q Factor:</strong></p>
+    <p>\\( Q = \\frac{f_0}{f_2 - f_1} \\)</p>
+
+    <p><strong>Important Notes:</strong> The Q factor determines the sharpness of the passband. High Q = narrow band. Useful in RF, bio-signal processing.</p>
+
+    <div class="placeholder">[Insert BPF Image]</div>
+    <div class="placeholder">[Insert BPF Simulation]</div>
+    <div class="placeholder">[Insert BPF Bode Plot]</div>
+  </div>
+
+  <div class="section">
+    <h2>🔇 Band-Stop Filter (Notch / BSF)</h2>
+    <p><strong>Center Frequency:</strong></p>
+    <p>\\( f_0 = \\frac{1}{2\\pi \\sqrt{R_1 R_2 C_1 C_2}} \\)</p>
+
+    <p><strong>Transfer Function:</strong></p>
+    <p>\\( H(s) = \\frac{s^2 + \\omega_0^2}{s^2 + \\frac{\\omega_0}{Q}s + \\omega_0^2} \\)</p>
+
+    <p><strong>Q Factor:</strong></p>
+    <p>\\( Q = \\frac{f_0}{f_2 - f_1} \\)</p>
+
+    <p><strong>Important Notes:</strong> Deep, narrow notch = high Q. Used to eliminate hums or specific frequencies. Inverse of BPF.</p>
+
+    <div class="placeholder">[Insert BSF Image]</div>
+    <div class="placeholder">[Insert BSF Simulation]</div>
+  </div>
+
+  <div class="section">
+    <h2>📊 The Role of Q Factor</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Q Value</th>
+          <th>Interpretation</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt; 0.5</td>
+          <td>Overdamped, flat transition</td>
+          <td>Gentle filters</td>
+        </tr>
+        <tr>
+          <td>0.707</td>
+          <td>Butterworth (maximally flat)</td>
+          <td>Balanced performance</td>
+        </tr>
+        <tr>
+          <td>1 – 5</td>
+          <td>Underdamped, sharper resonance</td>
+          <td>Band-pass / Band-stop</td>
+        </tr>
+        <tr>
+          <td>&gt; 10</td>
+          <td>Highly resonant</td>
+          <td>Precise notch filters</td>
+        </tr>
     <h2 id="freq-response">Frequency Response & Stability</h2>
     <p>As frequency increases, the amplifier’s available gain decreases following its gain-bandwidth product (GBW). Engineers must ensure sufficient <strong>phase margin</strong> (typically >45°) to avoid oscillations. This section dives into how GBW and phase margin intersect with real-world circuit design and stability.</p>
     <div class="image-slot">[Insert Bode plot illustrating gain roll‑off and phase margin]</div>
