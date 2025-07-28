@@ -1,53 +1,63 @@
-/* === Base Reset === */
-* {
-  box-sizing: border-box;
+/* === Base Layout === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  color: #212529;
   margin: 0;
   padding: 0;
 }
 
-/* === Typography and Layout === */
-body {
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 1.75;
+.container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 30px 20px;
   background-color: #ffffff;
-  color: #222222;
-  padding: 2rem;
-  max-width: 860px;
-  margin: auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
 
-h1, h2, h3 {
-  color: #003366;
-  margin-bottom: 1rem;
-}
-
+/* === Headings === */
 h1 {
-  font-size: 2rem;
-  margin-top: 2rem;
+  font-size: 2.4em;
+  color: #004080;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
+  font-size: 1.8em;
+  color: #003366;
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 
 h3 {
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
+  font-size: 1.4em;
+  color: #005599;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
-p, ul, ol {
-  margin-bottom: 1rem;
+/* === Paragraphs and Lists === */
+p {
+  margin-bottom: 20px;
 }
 
 ul, ol {
-  padding-left: 1.5rem;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
 }
 
 /* === Links === */
 a {
-  color: #0059b3;
+  color: #0077cc;
   text-decoration: none;
 }
 
@@ -55,108 +65,104 @@ a:hover {
   text-decoration: underline;
 }
 
+/* === Table of Contents === */
+.toc {
+  background-color: #eef6ff;
+  padding: 15px;
+  border-left: 4px solid #007acc;
+  border-radius: 6px;
+  margin-bottom: 35px;
+}
+
+.toc h3 {
+  margin-top: 0;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 8px 0;
+}
+
+.toc a {
+  color: #004080;
+  font-weight: 500;
+}
+
+/* === FAQ Section === */
+.faq-container details {
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-left: 4px solid #0077cc;
+}
+
+.faq-container summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #004080;
+}
+
 /* === Tables === */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
-  background: #f9f9f9;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin: 20px 0;
+  font-size: 0.95em;
 }
 
 th, td {
-  padding: 0.75rem;
-  text-align: left;
   border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
 }
 
 th {
-  background-color: #e6f0ff;
-  font-weight: bold;
-}
-
-/* === FAQ Collapsibles === */
-details {
-  background-color: #f2f9ff;
-  border: 1px solid #cce0f5;
-  border-radius: 4px;
-  padding: 1rem;
-  margin: 1rem 0;
-  transition: all 0.3s ease;
-}
-
-details[open] {
-  background-color: #e6f3ff;
-}
-
-summary {
-  cursor: pointer;
-  font-weight: bold;
+  background-color: #e9ecef;
   color: #003366;
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
 }
 
-/* === MathJax === */
-mjx-container {
-  font-size: 1.1em !important;
-  line-height: 1.6;
-  color: #222;
+td {
+  background-color: #fff;
 }
 
-mjx-container[display="true"] {
-  display: block;
-  margin: 1.5rem 0;
-  text-align: center;
-}
-
-/* === Media Elements === */
-img,
-video,
-iframe,
-.simulation-box {
-  display: block;
+/* === Images and Media === */
+img {
   max-width: 100%;
   height: auto;
-  margin: 1.5rem auto;
+  margin: 20px 0;
   border-radius: 6px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
-/* === Caption Styling === */
-figure {
-  margin: 2rem 0;
-  text-align: center;
+/* === Code and Math === */
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #eef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95em;
 }
 
-figure figcaption {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 0.5rem;
-  font-style: italic;
-}
-
-/* === Simulation Container === */
-.simulation-box {
-  background: #eef7ff;
-  padding: 1rem;
-  border: 1px solid #b3d4fc;
-  text-align: center;
-  font-family: monospace;
-}
-
-/* === Responsive Layout === */
-@media screen and (max-width: 768px) {
-  body {
-    padding: 1rem;
+/* === Responsive Design === */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 15px;
   }
 
-  table, thead, tbody, th, td, tr {
-    font-size: 14px;
+  h1 {
+    font-size: 2em;
   }
 
-  figure figcaption {
-    font-size: 0.85rem;
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
   }
 }
