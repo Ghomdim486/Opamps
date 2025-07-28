@@ -8,129 +8,129 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    /* Scrollable Table of Contents and collapsible FAQ */
-    .toc ul { list-style: none; padding-left: 0; }
-    .faq-container details { margin: 15px 0; background: #f5f5f5; padding: 10px; border-radius: 6px; }
-    .faq-container summary { font-weight: bold; cursor: pointer; }
-  </style>
 </head>
-
 <body>
-<div class="container">
-  <h1>Why Bridges Don’t Just Fall: The Physics of Structural Resonance</h1>
+  <div class="container">
+    
+    <h1 id="top">Why Bridges Don’t Just Fall: The Physics of Structural Resonance</h1>
 
-  <nav class="toc">
-    <h3>📘 Table of Contents</h3>
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#resonance">What is Structural Resonance?</a></li>
+        <li><a href="#formulas">Governing Physics and Formulas</a></li>
+        <li><a href="#case-studies">Famous Case Studies</a></li>
+        <li><a href="#simulation">Simulating Bridge Oscillations</a></li>
+        <li><a href="#prevention">Engineering Solutions</a></li>
+        <li><a href="#applications">Real‑World Applications</a></li>
+        <li><a href="#materials">Material Properties & Geometry</a></li>
+        <li><a href="#code">Building a Python Simulation</a></li>
+        <li><a href="#reflection">Personal Reflection</a></li>
+        <li><a href="#practice">From Theory to Practice</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content Sections -->
+    <h2 id="intro">Introduction: When Bridges Start to Dance</h2>
+    <p>On November 7, 1940, the Tacoma Narrows Bridge collapsed into Puget Sound—not due to faulty materials, but because of an invisible adversary: resonance. The bridge twisted, undulated, and finally gave way to the rhythm of the wind. It looked like a dance. It ended in disaster.</p>
+    <p>This article explores how structures behave dynamically, how resonance builds silently in rigid systems, and how we design bridges not just to stand, but to stay standing—against motion itself.</p>
+
+    <h2 id="resonance">What is Structural Resonance?</h2>
+    <p>Structural resonance occurs when an object is driven at its natural frequency, causing large amplitude oscillations. Every bridge, beam, or building has its own set of natural frequencies. If the driving force (like wind, footsteps, or traffic) matches one of these, the result is amplified motion—and potential disaster.</p>
+    <p>Think of pushing a child on a swing: push at the right time (resonant frequency), and the swing soars. Mistime it, and the swing resists. That same principle governs massive structures.</p>
+
+    <h2 id="formulas">Governing Physics and Formulas</h2>
     <ul>
-      <li><a href="#intro">Introduction</a></li>
-      <li><a href="#resonance">What is Structural Resonance?</a></li>
-      <li><a href="#formulas">Governing Physics and Formulas</a></li>
-      <li><a href="#case-studies">Famous Case Studies</a></li>
-      <li><a href="#simulation">Simulating Bridge Oscillations</a></li>
-      <li><a href="#prevention">Engineering Solutions</a></li>
-      <li><a href="#applications">Real-World Applications</a></li>
-      <li><a href="#materials">Material Properties and Geometry</a></li>
-      <li><a href="#code">Building a Python Simulation</a></li>
-      <li><a href="#reflection">Personal Reflection</a></li>
-      <li><a href="#practice">From Theory to Practice</a></li>
-      <li><a href="#faqs">FAQs</a></li>
-      <li><a href="#conclusion">Conclusion</a></li>
+      <li>Hooke’s Law (restoring force): \( F = -kx \)</li>
+      <li>Natural frequency of a simple oscillator: \( f_n = \tfrac{1}{2\pi} \sqrt{\tfrac{k}{m}} \)</li>
+      <li>Resonance condition: \( f_{drive} \approx f_n \)</li>
+      <li>Damped vibration formula: \( x(t) = Ae^{-\zeta\omega_n t} \cos(\omega_d t + \phi) \)</li>
+      <li>Where \( \zeta \) is damping ratio, and \( \omega_d \) the damped frequency.</li>
     </ul>
-  </nav>
 
-  <h2 id="intro">Introduction: When Bridges Start to Dance</h2>
-  <p>On November 7, 1940, the Tacoma Narrows Bridge collapsed into Puget Sound—not due to faulty materials, but because of an invisible adversary: resonance. The bridge twisted, undulated, and finally gave way to the rhythm of the wind. It looked like a dance. It ended in disaster.</p>
-  <p>This article explores how structures behave dynamically, how resonance builds silently in rigid systems, and how we design bridges not just to stand, but to stay standing—against motion itself.</p>
+    <h2 id="case-studies">Famous Case Studies</h2>
 
-  <h2 id="resonance">What is Structural Resonance?</h2>
-  <p>Structural resonance occurs when an object is driven at its natural frequency, causing large amplitude oscillations. Every bridge, beam, or building has its own set of natural frequencies. If the driving force (like wind, footsteps, or traffic) matches one of these, the result is amplified motion—and potential disaster.</p>
-  <p>Think of pushing a child on a swing: push at the right time (resonant frequency), and the swing soars. Mistime it, and the swing resists. That same principle governs massive structures.</p>
+    <h3>Tacoma Narrows Bridge (1940)</h3>
+    <p>Collapsed due to aeroelastic flutter—a self-feeding resonance induced by wind. Engineers underestimated how much energy wind could transfer at specific frequencies.</p>
+    <div class="video-slot">[Video: Tacoma Narrows Bridge collapse]</div>
 
-  <h2 id="formulas">Governing Physics and Formulas</h2>
-  <ul>
-    <li>Hooke’s Law (restoring force): \( F = -kx \)</li>
-    <li>Natural frequency of a simple oscillator: \( f_n = \frac{1}{2\pi} \sqrt{\frac{k}{m}} \)</li>
-    <li>Resonance occurs when: \( f_{drive} \approx f_n \)</li>
-    <li>Damped vibration equation: \( x(t) = Ae^{-\zeta\omega_n t} \cos(\omega_d t + \phi) \)</li>
-    <li>Where \( \zeta \) is damping ratio, \( \omega_d \) is damped frequency</li>
-  </ul>
+    <h3>London Millennium Bridge (2000)</h3>
+    <p>Opened in 2000, it began to sway as pedestrians walked across. Their footsteps unintentionally synchronized, creating lateral forces that resonated with the bridge’s natural frequency.</p>
+    <div class="simulation-slot">[Animation: Millennium Bridge pedestrian sway]</div>
 
-  <h2 id="case-studies">Famous Case Studies</h2>
-  <h3>Tacoma Narrows Bridge</h3>
-  <p>Collapsed due to aeroelastic flutter—a self-feeding resonance caused by wind. Engineers underestimated how much energy wind could transfer at specific frequencies.</p>
-  <p><em>[Insert video of collapse]</em></p>
+    <h2 id="simulation">Simulating Bridge Oscillations</h2>
+    <p>You can model simplified bridge behavior using mass-spring systems or beam finite-difference methods. Compare cases with and without damping and visualize amplitude vs. time and mode shapes.</p>
+    <div class="image-slot">[Image: Mode shape diagram / amplitude heatmap]</div>
+    <div class="simulation-slot">[Interactive simulation: oscillation build-up with damping]</div>
 
-  <h3>London Millennium Bridge</h3>
-  <p>Opened in 2000, it began to sway as pedestrians walked across. Their footsteps unintentionally synchronized, creating lateral forces that resonated with the bridge’s natural frequency.</p>
-  <p><em>[Insert pedestrian sway simulation]</em></p>
+    <h2 id="prevention">Engineering Solutions to Prevent Resonance</h2>
+    <ul>
+      <li><strong>Tuned Mass Dampers:</strong> large secondary masses tuned to counteract the structure's vibration (used in Taipei 101).</li>
+      <li><strong>Frequency Shifting:</strong> adjusting stiffness and geometry to avoid resonant coupling.</li>
+      <li><strong>Structural Dampers:</strong> rubber, viscoelastic materials, or shock absorbers integrated in design.</li>
+    </ul>
+    <div class="image-slot">[Image: Tuned Mass Damper system]</div>
 
-  <h2 id="simulation">Simulating Bridge Oscillations</h2>
-  <p>You can model a simplified beam using finite difference or lumped mass methods. Simulate how oscillations build up with and without damping. Use color-coded amplitude waves to show energy transfer.</p>
-  <p><em>[Insert bridge beam mode simulation – Python/JS]</em></p>
+    <h2 id="applications">Real‑World Applications</h2>
+    <ul>
+      <li>Earthquake-resistant buildings use base isolation and dampers to avoid seismic resonance.</li>
+      <li>Skyscraper designs incorporate TMDs and tuned stiffness to avoid wind-induced swaying.</li>
+      <li>Aircraft wings and train rails are tested against flutter and vibrational resonance.</li>
+    </ul>
+    <div class="video-slot">[Video: Structural damping demo]</div>
 
-  <h2 id="prevention">Engineering Solutions to Prevent Resonance</h2>
-  <ul>
-    <li><strong>Tuned Mass Dampers:</strong> large weights tuned to counter vibrations (used in Taipei 101)</li>
-    <li><strong>Frequency Shifting:</strong> altering design so natural frequencies avoid expected loading patterns</li>
-    <li><strong>Structural Dampers:</strong> rubber pads, viscoelastic materials, or shock absorbers</li>
-  </ul>
-  <p><em>[Insert image of TMD installation]</em></p>
+    <h2 id="materials">The Role of Material Properties & Geometry</h2>
+    <p>The natural frequency depends on material stiffness (Young's modulus), length, cross-section, and mass distribution. Designers can alter these properties to control resonant behavior—ensuring natural frequencies lie safely outside common excitation sources.</p>
+    <div class="image-slot">[Image: Comparison of materials and beam shapes]</div>
 
-  <h2 id="applications">Real-World Applications</h2>
-  <ul>
-    <li>Earthquake-resistant buildings use base isolators to absorb seismic resonance</li>
-    <li>Skyscrapers have internal dampers to prevent wind sway</li>
-    <li>Aircraft wings are tested for flutter—similar to what doomed the Tacoma bridge</li>
-  </ul>
-  <p><em>[Insert building vibration simulation or damper animation]</em></p>
+    <h2 id="code">Building a Python Simulation</h2>
+    <h3>Free Vibration of a Cantilever Beam</h3>
+    <div class="simulation-slot">[Interactive animation: undamped beam oscillation]</div>
+    <h3>Forced Vibration with Damping</h3>
+    <div class="simulation-slot">[Interactive slider: amplitude vs. driving frequency curve]</div>
 
-  <h2 id="materials">The Role of Material Properties and Geometry</h2>
-  <p>Natural frequency depends on stiffness (Young’s modulus), geometry (length, area moment), and mass. Changing any of these changes the resonant response. That’s why bridge engineers carefully select alloys and beam cross-sections—not just for strength, but for vibration characteristics.</p>
+    <h2 id="reflection">Personal Reflection</h2>
+    <p>Before this project, I saw bridges as static feats of engineering. Through hands-on modeling and real case studies, I began to understand them as dynamic systems—affected by wind, traffic, and subtle energy flows. Simulating their behavior has taught me to see structures as alive, and design with motion in mind.</p>
 
-  <h2 id="code">Building a Python Simulation</h2>
-  <h3>Free Vibration of a Cantilever Beam</h3>
-  <p><em>[Insert Python animation of a cantilever beam oscillating]</em></p>
+    <h2 id="practice">From Theory to Practice: What This Taught Me About Engineering</h2>
+    <p>This journey reinforced that mistakes are lessons. Learning from historical failures, debugging simulation code, and visualizing potential risks made me a better engineer. I now appreciate the need to design not only for strength but also for stability and resilience under dynamic loads.</p>
 
-  <h3>Forced Vibration with Damping</h3>
-  <p><em>[Insert interactive slider-based simulation for frequency vs. amplitude curve]</em></p>
+    <h2 id="faqs">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <details>
+        <summary>Q: What is structural resonance?</summary>
+        <p>It is when a structure is driven at one of its natural frequencies, leading to amplified oscillations.</p>
+      </details>
+      <details>
+        <summary>Q: Why did the Tacoma Narrows Bridge collapse?</summary>
+        <p>Due to aeroelastic flutter—wind induced a resonant oscillation until the structure failed.</p>
+      </details>
+      <details>
+        <summary>Q: How do engineers mitigate resonance today?</summary>
+        <p>They use tuned mass dampers, adjust design frequencies, and integrate structural damping mechanisms.</p>
+      </details>
+      <details>
+        <summary>Q: Can small periodic forces damage bridges?</summary>
+        <p>Yes—when those forces match a structure’s resonant frequency, even small inputs can grow over time.</p>
+      </details>
+      <details>
+        <summary>Q: What is a tuned mass damper?</summary>
+        <p>A secondary mass and spring system tuned to counteract structural motion.</p>
+      </details>
+      <details>
+        <summary>Q: Is coding required to simulate resonance?</summary>
+        <p>No—interactive tools like GeoGebra or PhET simulations can visualize resonance without code.</p>
+      </details>
+    </div>
 
-  <h2 id="reflection">Personal Reflection</h2>
-  <p>Before this project, I thought of bridges as static marvels. But now I see them as living systems—breathing, oscillating, and always on the edge of motion. Simulating their behavior made me more aware of how design is not just about strength but about motion.</p>
+    <h2 id="conclusion">Conclusion: The Beauty and Danger of Resonance</h2>
+    <p>Resonance is a powerful force—capable of both destruction and insight. In engineering, it demands respect. This project taught me that bridges and buildings are not just static—they are rhythms waiting to be understood. When design anticipates motion, stability follows.</p>
 
-  <h2 id="practice">From Theory to Practice: What This Taught Me About Engineering</h2>
-  <p>This article made me appreciate failure not as an endpoint, but a teacher. Studying real collapses, writing Python models, and visualizing standing waves brought textbook ideas to life. I now understand that the best engineers don’t just build—they listen to how structures want to move.</p>
-
-  <h2 id="faqs">FAQs</h2>
-  <div class="faq-container">
-    <details>
-      <summary>Q: What is structural resonance?</summary>
-      <p>It occurs when a structure is driven at its natural frequency, amplifying its oscillations.</p>
-    </details>
-    <details>
-      <summary>Q: Why did the Tacoma Narrows bridge collapse?</summary>
-      <p>Due to aeroelastic flutter—a wind-induced resonance that grew until failure.</p>
-    </details>
-    <details>
-      <summary>Q: How do engineers prevent resonance?</summary>
-      <p>Using tuned dampers, material choice, and designing around critical frequencies.</p>
-    </details>
-    <details>
-      <summary>Q: Can tiny vibrations destroy bridges?</summary>
-      <p>Yes—if repeated at the right frequency, they can build up and cause fatigue or failure.</p>
-    </details>
-    <details>
-      <summary>Q: What is a tuned mass damper?</summary>
-      <p>A device that oscillates out of phase with the structure to cancel vibrations.</p>
-    </details>
-    <details>
-      <summary>Q: Can I simulate resonance without coding?</summary>
-      <p>Yes—tools like PhET Simulations or GeoGebra allow interactive visualizations.</p>
-    </details>
+    <p><a href="#" class="btn">Download PDF</a> • <a href="#top">↑ Back to Top</a></p>
   </div>
-
-  <h2 id="conclusion">Conclusion: The Beauty and Danger of Resonance</h2>
-  <p>Resonance is both an enemy and a friend—destructive in bridges, useful in musical instruments. This project taught me that understanding motion isn’t optional in engineering—it’s essential. Bridges don’t fall because we design them to dance without breaking.</p>
-</div>
 </body>
 </html>
