@@ -12,7 +12,27 @@
 <body>
   <div class="container">
     <h1 id="top">Why Bridges Don’t Just Fall: The Physics of Structural Resonance</h1>
-    <nav class="toc">...</nav>
+      <!-- Table of Contents -->
+    <nav class="toc">
+      <h3>📘 Table of Contents</h3>
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#resonance">What is Structural Resonance?</a></li>
+        <li><a href="#formulas">Governing Physics and Formulas</a></li>
+        <li><a href="#case-studies">Famous Case Studies</a></li>
+        <li><a href="#simulation">Simulating Bridge Oscillations</a></li>
+        <li><a href="#prevention">Engineering Solutions</a></li>
+        <li><a href="#applications">Real‑World Applications</a></li>
+        <li><a href="#materials">Material Properties & Geometry</a></li>
+        <li><a href="#code">Building a Python Simulation</a></li>
+        <li><a href="#reflection">Personal Reflection</a></li>
+        <li><a href="#practice">From Theory to Practice</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content Sections --> 
 
     <h2 id="intro">Introduction: When Bridges Start to Dance</h2>
     <p>On November 7, 1940, the Tacoma Narrows Bridge collapsed—not due to bad materials, but resonance. It oscillated like a wave before giving in. This article shows how bridges, beams, and structures have natural frequencies, how they respond to forcing, and how engineering helps them stay safe.</p>
@@ -21,14 +41,14 @@
     <h2 id="resonance">What is Structural Resonance?</h2>
     <p>Every structure has natural frequencies and mode shapes. When external forcing (wind, footsteps, vehicles) matches these frequencies, amplitudes grow dramatically.</p>
     <p>For a cantilever beam, the first mode natural frequency is:</p>
-    <p>\\[ f_n = \frac{1.875^2}{2\pi L^2} \sqrt{\frac{EI}{\rho A}} \\]</p>
+    <p>\[ f_n = \frac{1.875^2}{2\pi L^2} \sqrt{\frac{EI}{\rho A}} \]</p>
     <p>\(E\) = Young’s modulus, \(I\) = second moment, \(\rho A\) = mass per unit length. The constant 1.875 refers to the first-mode eigenvalue under cantilever boundary conditions.</p>
 
     <h2 id="formulas">Governing Physics and Formulas</h2>
     <ul>
       <li>Beam equation (Euler–Bernoulli): \\[ EI \frac{\partial^4 w}{\partial x^4} + \rho A \frac{\partial^2 w}{\partial t^2} = 0 \\]</li>
-      <li>Damped vibration: \\[ x(t) = A e^{-\zeta \omega_n t} \cos(\omega_d t + \phi) \\]</li>
-      <li>Tuned mass damper resonance: \\[ \omega_{\text{TMD}} = \omega_n\sqrt{1 - 2 \zeta^2} \\]</li>
+      <li>Damped vibration: \[ x(t) = A e^{-\zeta \omega_n t} \cos(\omega_d t + \phi) \]</li>
+      <li>Tuned mass damper resonance: \[ \omega_{\text{TMD}} = \omega_n\sqrt{1 - 2 \zeta^2} \]</li>
     </ul>
 
     <h2 id="case-studies">Famous Case Studies</h2>
